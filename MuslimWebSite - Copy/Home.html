@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #f5deb3; /* Light brown background color */
+      font-family: "Arial", sans-serif; /* Arabic-style font */
+    }
+    
+    .navbar {
+      background: #d2b48c; /* Light brown background color for the navbar */
+      overflow: hidden;
+    }
+    
+    .navbar a {
+      float: left;
+      color: #fff; /* White text color */
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    
+    .navbar a:hover {
+      background-color: #8b7355; /* Darker brown background color on hover */
+    }
+    
+    .navbar a.active {
+      background-color: #654321; /* Dark brown background color for active tab */
+    }
+    
+    .container {
+      text-align: center;
+      padding-top: 50px;
+    }
+    
+    #banner {
+      display: none;
+      font-size: 24px;
+      color: #fff; /* White text color */
+      background-color: #654321; /* Dark brown background color for the banner */
+      padding: 20px;
+    }
+  </style>
+  
+  <script>
+    window.onload = function() {
+      fadeInBanner();
+    };
+    
+    function fadeInBanner() {
+      var banner = document.getElementById("banner");
+      banner.style.display = "block";
+      var opacity = 0;
+      var timer = setInterval(function() {
+        if (opacity >= 1) {
+          clearInterval(timer);
+        }
+        banner.style.opacity = opacity;
+        opacity += 0.1;
+      }, 100);
+    }
+  </script>
+</head>
+<body>
+  <div class="navbar">
+    <a class="active" href="#">Home</a>
+    <a href="alphabet.html">Alphabet</a>
+    <a href="#">Prayer</a>
+    <a href="#">Shahada</a>
+  </div>
+  
+  <div class="container">
+    <div id="banner">Learning Muslim Life</div>
+    <img src="img/kaba-stone.jpg" alt="Kaba Stone">
+   
+  </div>
+</body>
+</html>

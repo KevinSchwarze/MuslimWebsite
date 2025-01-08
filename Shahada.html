@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shahada</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #660099, #0000FF);
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .div-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      width: 100%; /* Stretch the div-container to the full width of the screen */
+    }
+    .div-box {
+      width: 250px; /* Adjust the width of the div-box containers */
+      height: 250px; /* Adjust the height of the div-box containers */
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      margin: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      overflow: hidden; /* Ensures image fits within div without overflowing */
+    }
+    .div-box img {
+      width: 100%; /* Ensures image completely fits the width of the div */
+      height: 100%; /* Ensures image completely fits the height of the div */
+      object-fit: contain; /* Scales the image to fit entirely within the div while preserving aspect ratio */
+    }
+    h1 {
+      font-size: 100px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow to the header */
+      font-family: 'Brush Script MT', cursive; /* Use a cursive font for the header */
+      color: white; /* Set the header text color */
+      height: 150px;
+    }
+    .navbar {
+      background: #d2b48c; /* Light brown background color for the navbar */
+      overflow: hidden;
+    }
+    
+    .navbar a {
+      float: left;
+      color: #fff; /* White text color */
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    
+    .navbar a:hover {
+      background-color: #8b7355; /* Darker brown background color on hover */
+    }
+    
+    .navbar a.active {
+      background-color: #654321; /* Dark brown background color for active tab */
+    }
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="alphabet.html">Alphabet</a>
+        <a href="#">Prayer</a>
+        <a href="active">Shahada</a>
+      </div>
+  <h1>Shahada</h1>
+  <div class="div-container">
+    <div class="div-box" onclick="playAudio(1)" id="div1">
+      <img src="img/Shahada_1.jpg" alt="Shahada 1 Image">
+    </div>
+    <div class="div-box" onclick="playAudio(2)" id="div2">
+      <img src="img/Shahada_2.jpg" alt="Shahada 2 Image">
+    </div>
+    <div class="div-box" onclick="playAudio(3)" id="div3">
+      <img src="img/Shahada_3.jpg" alt="Shahada 3 Image">
+    </div>
+  </div>
+  <div class="div-container">
+    <div class="div-box" onclick="playAudio(4)" id="div4">
+      <img src="img/Shahada_4.jpg" alt="Shahada 4 Image">
+    </div>
+    <div class="div-box" onclick="playAudio(5)" id="div5">
+      <img src="img/Shahada_5.jpg" alt="Shahada 5 Image">
+    </div>
+    <div class="div-box" onclick="playAudio(6)" id="div6">
+      <img src="img/Shahada_6.jpg" alt="Shahada 6 Image">
+    </div>
+  </div>
+
+  <script>
+    function playAudio(num) {
+      const audio = new Audio("audio/Shahada_" + num + ".wav");
+      audio.play();
+
+      const div = document.getElementById(`div${num}`);
+      if (!div.classList.contains('darken')) {
+        div.classList.add('darken');
+        audio.addEventListener('ended', () => {
+          div.classList.remove('darken');
+        }, { once: true });
+      }
+    }
+  </script>
+</body>
+</html>
+

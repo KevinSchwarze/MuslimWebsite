@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Salah</title>
+  <style>
+    body {
+      background: url('img/clouds.jpg'); /* Replace 'clouds.jpg' with the actual image path for the clouds background */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: blue;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding a text shadow for a stylized effect */
+      margin: 0; /* Remove the margin around the heading */
+      padding-top: 20px; /* Add some padding to separate the navbar from the heading */
+    }
+
+    #spinner-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Make the container full height of the viewport */
+      perspective: 1000px; /* Adding a perspective to create the 3D effect */
+    }
+
+    #spinner {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 50%; /* Move the spinner to the vertical center */
+      left: 50%; /* Move the spinner to the horizontal center */
+      transform: translate(-50%, -50%) rotateY(0deg); /* Center the spinner and start from 0deg rotation */
+      transform-style: preserve-3d;
+      animation: spin 3s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: translate(-50%, -50%) rotateY(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotateY(360deg);
+      }
+    }
+
+    .spinner-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spinner-image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .navbar {
+      background: #d2b48c;
+      overflow: hidden;
+      margin-bottom: 0; /* Remove the margin below the navbar */
+    }
+
+    .navbar a {
+      float: left;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      background-color: #8b7355;
+    }
+
+    .navbar a.active {
+      background-color: #654321;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a class="active" href="#">Home</a>
+    <a href="alphabet.html">Alphabet</a>
+    <a href="salah.html">Salah</a>
+    <a href="shahada.html">Shahada</a>
+  </div>
+
+  <div id="spinner">
+    <h1>Salah</h1>
+</div>
+
+    <div id="spinners" >
+      <div class="spinner-image">
+        <img src="img/salah.jpg" alt="Salah" />
+      </div>
+    </div>
+ 
+
+  <script>
+    // JavaScript to stop the spinning effect after a delay (3 seconds in this example)
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('spinner').style.animation = 'none';
+      }, 3000);
+    };
+  </script>
+</body>
+
+</html>
