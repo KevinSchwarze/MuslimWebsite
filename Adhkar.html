@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhkar</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #f9f6ff; /* Very light purple background */
+            background-image: radial-gradient(circle, transparent 20%, #eae2ff 20%, #eae2ff 80%, transparent 80%),
+                              radial-gradient(circle, #eae2ff 20%, transparent 20%, transparent 80%, #eae2ff 80%);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        li {
+            font-size: 1.5em;
+            margin: 10px 0;
+            cursor: pointer;
+            color: #5e35b1;
+        }
+        li:hover {
+            text-decoration: underline;
+            color: #7c4dff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adhkar</h1>
+    <ul>
+        <li onclick="playAudio('Bismillah')"><strong>Bismillah (بِسْمِ اللهِ)</strong> - In the name of Allah</li>
+        <li onclick="playAudio('Alhamdulillah')"><strong>Alhamdulillah (الحمد لله)</strong> - Praise be to Allah</li>
+        <li onclick="playAudio('Yarhamukallah')"><strong>Yarhamukallah (يرحمك الله)</strong> - May Allah have mercy on you</li>
+        <li onclick="playAudio('Tabarakallah')"><strong>Tabarakallah (تبارك الله)</strong> - Blessed is Allah</li>
+        <li onclick="playAudio('Assalamu_Alaykum')"><strong>Assalamu Alaykum (السلام عليكم)</strong> - Peace be upon you</li>
+        <li onclick="playAudio('Wa_Tabaarka_Ismuka')"><strong>Wa Tabaarka Ismuka (وتبارك اسمك)</strong> - And blessed is Your name</li>
+        <li onclick="playAudio('Allahu_Akbar')"><strong>Allahu Akbar (الله أكبر)</strong> - Allah is the Greatest</li>
+        <li onclick="playAudio('Subhanallah')"><strong>Subhanallah (سبحان الله)</strong> - Glory be to Allah</li>
+        <li onclick="playAudio('Astaghfirullah')"><strong>Astaghfirullah (أستغفر الله)</strong> - I seek forgiveness from Allah</li>
+        <li onclick="playAudio('InshaAllah')"><strong>Insha'Allah (إن شاء الله)</strong> - If Allah wills</li>
+        <li onclick="playAudio('Jazakallah_Khair')"><strong>Jazakallah Khair (جزاك الله خير)</strong> - May Allah reward you with goodness</li>
+        <li onclick="playAudio('La_ilaha_illallah')"><strong>La ilaha illallah (لا إله إلا الله)</strong> - There is no god but Allah</li>
+        <li onclick="playAudio('Subhanahu_wa_taala')"><strong>Subhanahu wa ta'ala (سبحانه وتعالى)</strong> - Glorified and Exalted is He</li>
+        <li onclick="playAudio('La_hawla')"><strong>La hawla wa la quwwata illa billah (لا حول ولاقوة إلا بالله)</strong> - There is no power nor strength except with Allah</li>
+        <li onclick="playAudio('Hasbunallahu')"><strong>Hasbunallahu wa ni'mal wakeel (حسبنا الله ونعم الوكيل)</strong> - Allah is sufficient for us, and He is the best disposer of affairs</li>
+        <li onclick="playAudio('Alhamdulillah_Rabbil_Alamin')"><strong>Alhamdulillah Rabbil 'Alamin (الحمد لله رب العالمين)</strong> - Praise be to Allah, the Lord of all the worlds</li>
+        <li onclick="playAudio('Rabbi_zidni_ilma')"><strong>Rabbi zidni ilma (ربي زدني علما)</strong> - My Lord, increase me in knowledge</li>
+        <li onclick="playAudio('Inna_lillahi')"><strong>Inna lillahi wa inna ilayhi raji'un (إنا لله وإنا إليه راجعون)</strong> - Indeed, we belong to Allah, and indeed to Him we will return</li>
+        <li onclick="playAudio('Barakallahu_feek')"><strong>Barakallahu feek (بارك الله فيك)</strong> - May Allah bless you</li>
+        <li onclick="playAudio('Rahimakallah')"><strong>Rahimakallah (رحمك الله)</strong> - May Allah have mercy on you</li>
+    </ul>
+
+    <audio id="audioPlayer"></audio>
+
+    <script>
+      function playAudio(fileName) {
+    const audio = document.getElementById('audioPlayer');
+    audio.src = `./audio/${fileName}.wav`; // Use './' to refer to the current directory
+    audio.play();
+}
+    </script>
+</body>
+</html>
+
